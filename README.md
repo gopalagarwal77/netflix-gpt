@@ -49,6 +49,9 @@ const checkValidDataForSignUp = (name, email, password) => {
   return ""; // No error
 };
 
+- Firebase Setup
+- Deploy our app to production
+
 
 
 # Features
