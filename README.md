@@ -51,8 +51,11 @@ const checkValidDataForSignUp = (name, email, password) => {
 
 - Firebase Setup
 - Deploy our app to production
-
-
+- Create SignUp User Account
+- Implement Sign In user Api
+- Create a Redux store with userSlice
+- Implemented Sign out 
+- Update Profile
 
 # Features
 - Login/Sign up 
@@ -69,3 +72,6 @@ const checkValidDataForSignUp = (name, email, password) => {
    - Search Bar
    - Movie Suggestions
    
+
+
+ src="https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e"  
