@@ -8,7 +8,7 @@
 - Sign up Form 
 - Form Validation 
 - useRef Hook 
-- we can also seprate the sign in and sign up validation 
+- we can also separate the sign in and sign up validation 
 
 - Sign in validation looks like this:
 
@@ -56,6 +56,18 @@ const checkValidDataForSignUp = (name, email, password) => {
 - Create a Redux store with userSlice
 - Implemented Sign out 
 - Update Profile
+- Unsubscribed to the onAuthStateChange callback
+- Add hardcoded values to the constants file
+- Register for the tmdb Database to get the Api and get access token
+- Get Data from the tmdb now playing movies list Api
+- Custom hook for now playing movies
+- create movie slice 
+- Update store with movies data 
+- Planning for MainContainer and SecondaryContainer
+- Fetch Data for trailers
+- Update the store with trailers data
+- Embedded the youtube video and make it autoplay and mute
+
 
 # Features
 - Login/Sign up 

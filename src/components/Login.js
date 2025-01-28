@@ -6,15 +6,14 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 const Login = () => {
   // Sign In and Sign Up change logic
   const [isSignInForm, setIsSignForm] = useState(true);
   const [errormessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const name = useRef(null);
   const email = useRef(null);
@@ -45,22 +44,19 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://media.licdn.com/dms/image/v2/C4E03AQGbqYMVgpLJTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1639664652781?e=1742428800&v=beta&t=VxL_6ph0TedRycpAn7AwcgHoAorLELblnmne1vUHHTY",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
-              const { uid, email, displayName, photoURL } = auth.currentUser;  // if i use user instead of auth.currentUser i will not the the updated value 
+              const { uid, email, displayName, photoURL } = auth.currentUser; // if i use user instead of auth.currentUser i will not the the updated value
               dispatch(
-                        addUser({
-                          uid: uid,
-                          email: email,
-                          displayName: displayName,
-                          photoURL: photoURL,
-                        })
-                      );
-               
-              navigate("/browse");
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
               // ...
             })
             .catch((error) => {
@@ -84,8 +80,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+
           // ...
         })
         .catch((error) => {
@@ -104,10 +99,7 @@ const Login = () => {
     <>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/2f5a878d-bbce-451b-836a-398227a34fbf/web/IN-en-20241230-TRIFECTA-perspective_5ab944a5-1a71-4f6d-b341-8699d0491edd_small.jpg"
-          alt="logo"
-        />
+        <img src={BG_URL} alt="logo" />
       </div>
       <form
         onSubmit={(e) => {
