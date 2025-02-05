@@ -67,6 +67,12 @@ const checkValidDataForSignUp = (name, email, password) => {
 - Fetch Data for trailers
 - Update the store with trailers data
 - Embedded the youtube video and make it autoplay and mute
+- Build Secondary Component
+- Build Movie List
+- Build Movie Card
+- TMDB Image CDN URL
+- Made the Browse page amazing with Tailwind CSS
+- made the custom hooks to fetch movies and tv shows 
 
 
 # Features
